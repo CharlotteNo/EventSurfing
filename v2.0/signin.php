@@ -12,8 +12,9 @@ if( isset($_POST['identification']) )
 {
 	$mail = $_POST['mail'];
 	
-	$row = Database::get()->prepare_execute("SELECT password FROM user WHERE mail='$mail'" );
+	$row = Database::get()->prepare_execute("SELECT id, password FROM user WHERE mail='$mail'" );
 	$password = $row[0]['password'];
+	$id = $row[0]['id'];
 	
 	if ( $password==$_POST['password'] )
 	{
@@ -21,6 +22,7 @@ if( isset($_POST['identification']) )
     $_SESSION['login'] = $_POST['mail'];
     $_SESSION['pwd'] = $_POST['password'];
 		$message = "Vous etes bien loggé sous l'addresse: $mail";
+		header("Location: profil.php?id=$id" );
 	}
 	else
 	{

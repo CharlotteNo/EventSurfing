@@ -2,34 +2,38 @@
 require('bdd.php');
 require('view.php');
 
-$vue = new View('recherche.html');
-$vue->set(['TITRE'=> $titre]);
+$titre = "Recherche";
 
-
-if( isset($_POST['recherche']) )
+if( isset($_GET['recherche']) && !empty($_GET['nom']) )
 {
-	$type = $_POST['type'];
-	$recherche = $_POST['recherche'];
+	$nom = $_GET['nom'];
 
-	if($type === 1){
-	$row = Database::get()->prepare_execute("SELECT * FROM user_profile WHERE name = '$recherche' or lastname = '$recherche'" );
-}
-	else{
-		$row = Database::get()->prepare_execute("SELECT * FROM event WHERE name = '$recherche'" );
+	if( $_GET['type'] === 'people')
+	{
+		$row = Database::get()->prepare_execute("SELECT * FROM user_profile WHERE name = '$nom' or lastname = '$recherche'" );
+		if ( !empty($row) ) {
+			$vue = new View('recherches_people.html');
+			$vue->setLoop(['LISTE' => $row]);
+		}			
 	}
-	$vue->setLoop(['LISTE' => $row]);
+	else if( $_GET['type'] === 'event')
+	{
+		$row = Database::get()->prepare_execute("SELECT * FROM event WHERE name = '$nom'" );
+		if ( !empty($row) ) {
+			$vue = new View('recherches_event.html');
+			$vue->setLoop(['LISTE' => $row]);
+		}
+	}
+	
+	if ( empty($row) )
+		$vue = new View('recherches.html');
 }
-else 
+else
 {
-	$message = 'Recherche';
+	$vue = new View('recherches.html');
 }
 
 /* traitements */
-$titre = "Recherche $name";
-
-/* Affichage */
-// $vue = new View('recherche.html');
-// $vue->set(['TITRE'=> $titre]);
-// $vue->setLoop(['LISTE' => $row]);
+$vue->set(['TITRE'=> $titre]);
 $vue->display();
 ?>
