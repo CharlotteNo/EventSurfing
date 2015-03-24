@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>{{TITRE}}</title>
+	</head>
+	
+	<body>
+		<p>
+			{{ERRORMESSAGE}}
+			{{MESSAGE}}
+		</p>
+		<form action="create_event.php" method="get">
+			<input type="text" placeholder="Nom" name="name" /><br/>
+			<input type="text" placeholder="Adresse" name="address" /><br/>
+			<input type="datetime" placeholder="Date ex:2015-03-12 13:10:00" name="time" /><br/>
+			<textarea type="textaera" name="bio" rows="10" cols="40">Description de l'event</textarea><br/>
+			<p>Tag</p>
+			<input type="checkbox" name="choix[]" value="1"> art
+			<input type="checkbox" name="choix[]" value="2"> concert
+			<input type="checkbox" name="choix[]" value="3"> bière <br/>
+			<input type="submit" value="Valider" name="create_event" />
+		</form>
+	</body>
+	
+</html>
