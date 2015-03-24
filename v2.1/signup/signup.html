@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>{{TITRE}}</title>
+	</head>
+	
+	<body>
+		<p>
+			Bienvenue.<br />
+			{{ERRORMESSAGE}}
+			{{MESSAGE}}
+		</p>
+		
+		<form action="signup.php" method="post">
+			<input type="text" placeholder="E-mail" name="mail" />
+			<input type="text" placeholder="Password" name="password" />
+			<input type="text" placeholder="First Name" name="name" />
+			<input type="text" placeholder="Last Name" name="lastname" />
+			<input type="text" placeholder="Address" name="address" />
+			<input type="text" placeholder="City" name="city" />
+			<input type="text" placeholder="Bio" name="bio" />
+			<input type="submit" value="Valider" name="nouvel_utilisateur" />
+		</form>
+		
+	</body>
+	
+</html>

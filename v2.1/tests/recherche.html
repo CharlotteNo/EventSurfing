@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="fr">
+	<head>
+		<meta charset="utf-8">
+		<title>{{TITRE}}</title>
+	</head>
+	
+	<body>
+		<div>	
+			{{BEGIN.LISTE}}
+			<h1>{{name.LISTE}} {{lastname.LISTE}}</h1>
+				<p>Adresse : {{address.LISTE}} Ville : {{city.LISTE}}.<br/>
+				Date d'inscription : {{createtime.LISTE}}.<br/>
+				<p>A propros de {{name.LISTE}} : {{bio.LISTE}}.</p>			
+			{{END.LISTE}}
+		<div>
+		
+		<form action="recherche.php" method="post">
+			<input type="text" placeholder="Recherche par nom" name="name" />
+			<input type="submit" value="Valider" name="recherche" />
+		</form>
+		
+	</body>
+	
+</html>
