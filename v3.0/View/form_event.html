@@ -1,0 +1,19 @@
+<div id="eventform">
+	<form action="post.php" method="post">
+		<input type="text" placeholder="Name" name="name" />
+		<input type="text" placeholder="Address" name="address" />
+		<input type="datetime" placeholder="Date 2015-03-12 13:10:00" name="time" />
+		<textarea type="textaera" name="bio" rows="10" cols="40">Description</textarea>
+		<p>Select tags :</p><div id="tag">
+			<input type="checkbox" name="tag[]" value="1"> art
+			<input type="checkbox" name="tag[]" value="2"> concert
+			<input type="checkbox" name="tag[]" value="3"> bière
+			<input type="checkbox" name="tag[]" value="4"> electro
+			<input type="checkbox" name="tag[]" value="5"> performance
+			<input type="checkbox" name="tag[]" value="6"> BBQ
+			<input type="checkbox" name="tag[]" value="7"> sport
+			<input type="checkbox" name="tag[]" value="8"> web
+		</div>	
+		<input type="submit" value="Post" name="eventpost" />
+	</form>
+</div>
