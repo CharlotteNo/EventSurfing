@@ -1,0 +1,9 @@
+<div id="eventmodif">
+	<form action="update.php?type=event&id={{ID}}" method="post">
+		<input type="text" placeholder="Nom" name="name" value="{{NAME}}"/>
+		<input type="text" placeholder="Adresse" name="address" value="{{ADDRESS}}"/>
+		<input type="datetime" placeholder="Date ex:2015-03-12 13:10:00" name="time" value="{{TIME}}"/>
+		<textarea type="textaera" name="bio" rows="10" cols="40" value="{{BIO}}">{{BIO}}</textarea>
+		<input type="submit" value="Save" name="modif_event" />
+	</form>
+</div>

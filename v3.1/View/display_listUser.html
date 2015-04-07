@@ -1,0 +1,13 @@
+<div id="userlist">	
+	{{BEGIN.LIST}}
+	<div class="listelement">
+		<h2> <a href='profil.php?id={{user_id.LIST}}'> {{name.LIST}} {{lastname.LIST}} </a> </h2>
+		<p>
+			<i>Adresse :</i> {{address.LIST}}<br/>
+			<i>Ville :</i> {{city.LIST}}.<br/>
+			<i>Date d'inscription :</i> {{createtime.LIST}}.<br/>
+			<i>A propos :</i> {{bio.LIST}}.
+		</p>
+	</div>
+	{{END.LIST}}
+<div>
